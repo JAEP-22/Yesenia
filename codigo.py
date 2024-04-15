@@ -10,7 +10,7 @@ logging.getLogger("httpx").setLevel(logging.WARNING)
 logger = logging.getLogger(__name__)
 
 # Expresión regular para detectar mensajes que contienen "Hola"
-expresion_regular = re.compile(r"hello|hi|hey|hola", re.IGNORECASE)
+expresion_regular = re.compile(r"hello|hi|hey|hola|lol", re.IGNORECASE)
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
