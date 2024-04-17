@@ -81,4 +81,5 @@
    ![WhatsApp Image 2024-04-16 at 22 41 15_9c07e8ab](https://github.com/JAEP-22/Yesenia/assets/160981030/c139f3d8-f381-4269-bca6-0b68ef2c3cc7)
 
 ## Concluciones 
-
+Puedo concluir que con las expresiones regulares que utilizamos al realizar nuestro bot nos ayuda a la extraccion mas facil de datos ya que no tenemos que sacar dato por dato cualquier informacion
+si no que con una expresion podemos sacar miles de datos los cuales nos ahorraria mas tiempo del necesario, aunque un poco tediosa la practica ya que se me complico un poco poder agregar mas enunciados pero al poco rato me di cuenta que era facil, me ayudo a retroalimentar mas mis conocmimientos vistos en clase.
