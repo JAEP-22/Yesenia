@@ -28,5 +28,18 @@
 
 ## Platicando con el bot 
 
+1. Para poder hacer que nuestro bot no responda unicamente con la palabra `Hola` procedi a colocar mas expreciones regulares para asi hacerlo un poco mas complejo
+
+## Expresiones regulares 
+
+1. Saludo
+   Unicamente aqui estamos dando como entrada un saludo normal, en mi caso `Hola`
+   ~~~
+   expresion_regular = re.compile(r"hola", re.IGNORECASE)
+   ~~~
+
+   ![WhatsApp Image 2024-04-16 at 21 35 18_11509e7c](https://github.com/JAEP-22/Yesenia/assets/160981030/7a45aec8-192d-4902-b4b4-bf13fddee8a7)
+
+
 
 
