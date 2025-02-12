@@ -33,3 +33,4 @@ for consulta in consultas:
         print(f"Buscar vuelo de ida y vuelta de {origen} a {destino}")
     else:
         print("Lo siento, no puedo entender tu consulta.")
+        
