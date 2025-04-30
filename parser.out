@@ -1,0 +1,200 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    Igual
+
+Grammar
+
+Rule 0     S' -> expresion
+Rule 1     expresion -> expresion Suma termino
+Rule 2     expresion -> expresion Resta termino
+Rule 3     expresion -> termino
+Rule 4     termino -> termino Multi factor
+Rule 5     termino -> termino Divi factor
+Rule 6     termino -> factor
+Rule 7     factor -> Numero
+Rule 8     expresion -> error
+
+Terminals, with rules where they appear
+
+Divi                 : 5
+Igual                : 
+Multi                : 4
+Numero               : 7
+Resta                : 2
+Suma                 : 1
+error                : 8
+
+Nonterminals, with rules where they appear
+
+expresion            : 1 2 0
+factor               : 4 5 6
+termino              : 1 2 3 4 5
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expresion
+    (1) expresion -> . expresion Suma termino
+    (2) expresion -> . expresion Resta termino
+    (3) expresion -> . termino
+    (8) expresion -> . error
+    (4) termino -> . termino Multi factor
+    (5) termino -> . termino Divi factor
+    (6) termino -> . factor
+    (7) factor -> . Numero
+
+    error           shift and go to state 3
+    Numero          shift and go to state 5
+
+    expresion                      shift and go to state 1
+    termino                        shift and go to state 2
+    factor                         shift and go to state 4
+
+state 1
+
+    (0) S' -> expresion .
+    (1) expresion -> expresion . Suma termino
+    (2) expresion -> expresion . Resta termino
+
+    Suma            shift and go to state 6
+    Resta           shift and go to state 7
+
+
+state 2
+
+    (3) expresion -> termino .
+    (4) termino -> termino . Multi factor
+    (5) termino -> termino . Divi factor
+
+    Suma            reduce using rule 3 (expresion -> termino .)
+    Resta           reduce using rule 3 (expresion -> termino .)
+    $end            reduce using rule 3 (expresion -> termino .)
+    Multi           shift and go to state 8
+    Divi            shift and go to state 9
+
+
+state 3
+
+    (8) expresion -> error .
+
+    Suma            reduce using rule 8 (expresion -> error .)
+    Resta           reduce using rule 8 (expresion -> error .)
+    $end            reduce using rule 8 (expresion -> error .)
+
+
+state 4
+
+    (6) termino -> factor .
+
+    Multi           reduce using rule 6 (termino -> factor .)
+    Divi            reduce using rule 6 (termino -> factor .)
+    Suma            reduce using rule 6 (termino -> factor .)
+    Resta           reduce using rule 6 (termino -> factor .)
+    $end            reduce using rule 6 (termino -> factor .)
+
+
+state 5
+
+    (7) factor -> Numero .
+
+    Multi           reduce using rule 7 (factor -> Numero .)
+    Divi            reduce using rule 7 (factor -> Numero .)
+    Suma            reduce using rule 7 (factor -> Numero .)
+    Resta           reduce using rule 7 (factor -> Numero .)
+    $end            reduce using rule 7 (factor -> Numero .)
+
+
+state 6
+
+    (1) expresion -> expresion Suma . termino
+    (4) termino -> . termino Multi factor
+    (5) termino -> . termino Divi factor
+    (6) termino -> . factor
+    (7) factor -> . Numero
+
+    Numero          shift and go to state 5
+
+    termino                        shift and go to state 10
+    factor                         shift and go to state 4
+
+state 7
+
+    (2) expresion -> expresion Resta . termino
+    (4) termino -> . termino Multi factor
+    (5) termino -> . termino Divi factor
+    (6) termino -> . factor
+    (7) factor -> . Numero
+
+    Numero          shift and go to state 5
+
+    termino                        shift and go to state 11
+    factor                         shift and go to state 4
+
+state 8
+
+    (4) termino -> termino Multi . factor
+    (7) factor -> . Numero
+
+    Numero          shift and go to state 5
+
+    factor                         shift and go to state 12
+
+state 9
+
+    (5) termino -> termino Divi . factor
+    (7) factor -> . Numero
+
+    Numero          shift and go to state 5
+
+    factor                         shift and go to state 13
+
+state 10
+
+    (1) expresion -> expresion Suma termino .
+    (4) termino -> termino . Multi factor
+    (5) termino -> termino . Divi factor
+
+    Suma            reduce using rule 1 (expresion -> expresion Suma termino .)
+    Resta           reduce using rule 1 (expresion -> expresion Suma termino .)
+    $end            reduce using rule 1 (expresion -> expresion Suma termino .)
+    Multi           shift and go to state 8
+    Divi            shift and go to state 9
+
+
+state 11
+
+    (2) expresion -> expresion Resta termino .
+    (4) termino -> termino . Multi factor
+    (5) termino -> termino . Divi factor
+
+    Suma            reduce using rule 2 (expresion -> expresion Resta termino .)
+    Resta           reduce using rule 2 (expresion -> expresion Resta termino .)
+    $end            reduce using rule 2 (expresion -> expresion Resta termino .)
+    Multi           shift and go to state 8
+    Divi            shift and go to state 9
+
+
+state 12
+
+    (4) termino -> termino Multi factor .
+
+    Multi           reduce using rule 4 (termino -> termino Multi factor .)
+    Divi            reduce using rule 4 (termino -> termino Multi factor .)
+    Suma            reduce using rule 4 (termino -> termino Multi factor .)
+    Resta           reduce using rule 4 (termino -> termino Multi factor .)
+    $end            reduce using rule 4 (termino -> termino Multi factor .)
+
+
+state 13
+
+    (5) termino -> termino Divi factor .
+
+    Multi           reduce using rule 5 (termino -> termino Divi factor .)
+    Divi            reduce using rule 5 (termino -> termino Divi factor .)
+    Suma            reduce using rule 5 (termino -> termino Divi factor .)
+    Resta           reduce using rule 5 (termino -> termino Divi factor .)
+    $end            reduce using rule 5 (termino -> termino Divi factor .)
+
